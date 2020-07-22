@@ -15,7 +15,7 @@ else
   fi
 
   latest_version=$(curl -s https://bldr.habitat.sh/v1/depot/channels/nrycar/${channel}/pkgs/${app_ident}/latest\?target\=x86_64-linux | jq -r '.ident | .release')
-  running_version=$(curl -s http://${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .release")
+  running_version=$(curl -s http://${tag_name}-${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .release")
 
   echo "${env} is currently running build ${running_version} from the ${channel} channel."
   echo "Latest build in ${channel} is: ${latest_version}"
@@ -25,7 +25,7 @@ else
     echo "Waiting for deploy to complete..."
     sleep 5
     echo ". . . . . . . . ."
-    running_version=$(curl -s http://${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .release")
+    running_version=$(curl -s http://${tag_name}-${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .release")
   done
   echo "...deploy complete!"
   exit 0

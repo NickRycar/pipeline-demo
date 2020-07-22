@@ -23,7 +23,7 @@ else
   jq_query="[.census_groups.\"${app_ident}.${env}\".population[].sys][0]"
 fi
 
-np_ip=$(curl -s http://${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .ip")
+np_ip=$(curl -s http://${tag_name}-${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .ip")
 
 while [ $curr_count -lt $dep_count ]
 do

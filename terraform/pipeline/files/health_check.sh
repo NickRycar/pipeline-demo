@@ -14,7 +14,7 @@ else
     jq_query="[.census_groups.\"${app_ident}.${env}\".population[].sys][0]"
   fi  
   
-  np_ip=$(curl -s http://${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .ip")
+  np_ip=$(curl -s http://${tag_name}-${app_shortname}-peer-${env}.chef-demo.com:9631/census | jq -r "${jq_query} | .ip")
   
   if [[ $channel == *"blue"* || $channel == *"green"* ]]; then 
   np_health=$(curl -s ${np_ip}:9631/services/${app_ident}/${channel}/health | jq .status)
