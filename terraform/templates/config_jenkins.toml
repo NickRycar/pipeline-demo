@@ -1,0 +1,13 @@
+[jenkins.security]
+username = "admin"
+password = "${admin_password}"
+
+[[jenkins.credentials]]
+  id          = "hab-depot-token"
+  token       = "${depot_token}"
+  description = "Habitat Depot Authentication Token"
+
+[[jenkins.credentials]]
+  id          = "hab-ctl-secret"
+  token       = "${ctl_secret}"
+  description = "Habitat Supervisor Remote Auth Secret"

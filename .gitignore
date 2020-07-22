@@ -1,0 +1,6 @@
+results/
+.terraform
+*tfvars
+*tfstate*
+.kitchen
+.DS_Store

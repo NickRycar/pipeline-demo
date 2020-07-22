@@ -1,0 +1,65 @@
+// AWS ACCOUNT INFO
+aws_profile = "solutions-architects"
+
+aws_key_pair_file = "~/.ssh/MY_KEY.pem"
+
+aws_key_pair_name = "MY_KEY"
+
+// Instance Tagging
+
+tag_customer = "MY_CUSTOMER"
+
+tag_project = "MY_PROJECT" 
+
+tag_name = "MY_NAME"
+
+tag_dept = "sales"
+
+tag_contact = "MY_EMAIL@chef.io"
+
+tag_ttl = 8
+
+tag_application = "MY APP"
+
+// Node Counts
+
+node_count = "1"
+
+np_prod_node_count = "6"
+
+sn_prod_count = "2"
+
+// Chef Automate Information
+
+event-stream-enabled = "true" // Toggle to 'false' if not using Automate
+
+automate_url = "https://MYURL.chef-demo.com"
+
+automate_hostname = "MYURL.chef-demo.com"
+
+automate_ip = "12.34.56.789"
+
+automate_token = "MY_TOKEN"
+
+automate_user = "admin"
+
+// Builder Information
+
+origin = "MY_ORIGIN"
+
+infra_origin = "MY_ORIGIN"
+
+infra_package = "dca-hardening"
+
+audit_origin = "MY_ORIGIN"
+
+audit_package = "dca-audit"
+
+dev_channel = "dev"
+
+jenkins_admin = "admin"
+
+depot_token = "MY_DEPOT_TOKEN"
+
+// ctl_secret will set the supervisor secret for blue/green updates
+ctl_secret = "MY_SUPERVISOR_SECRET"

@@ -1,0 +1,28 @@
+interval = 3000
+splay = 30
+splay_first_run = 0
+log_level = 'warn'
+
+[chef_license]
+acceptance = "accept-no-persist"
+
+[waivers]
+[waivers.'patches']
+run = false
+justification = "Patches? We don't need no stinkin' patches!"
+[waivers.'verify-patches']
+run = false
+[waivers.'sysctl-14']
+run = false
+justification = "Conflict with corporate networking policy. Skip."
+[waivers.'os-08']
+expiration_date = "2020-10-01"
+run = false
+justification = "We have a plan to fix this in Q3. Alert after spring."
+
+[automate]
+enable = true
+server_url = "${automate_url}"
+token = "${automate_token}"
+user = "${automate_user}"
+environment = "${chef_env}"
