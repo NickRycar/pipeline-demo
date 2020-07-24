@@ -21,3 +21,30 @@ data "template_file" "config_toml_jenkins" {
     ctl_secret       = var.ctl_secret
   }
 }
+
+data "template_file" "deployment_status" {
+  template = file("${path.module}/../templates/deployment_status.sh")
+
+  vars = {
+    tag_name = var.tag_name
+    origin = var.origin
+  }
+}
+
+data "template_file" "dep_comp" {
+  template = file("${path.module}/../templates/dep_comp.sh")
+
+  vars = {
+    tag_name = var.tag_name
+    origin = var.origin
+  }
+}
+
+data "template_file" "health_check" {
+  template = file("${path.module}/../templates/health_check.sh")
+
+  vars = {
+    tag_name = var.tag_name
+    origin = var.origin
+  }
+}

@@ -50,17 +50,20 @@ resource "aws_instance" "jenkins" {
   }
 
   provisioner "file" {
-    source      = "files/deployment_status.sh"
+    # source      = "files/deployment_status.sh"
+    content     = data.template_file.deployment_status.rendered
     destination = "/home/${var.aws_ami_user}/deployment_status.sh"
   }
 
   provisioner "file" {
-    source      = "files/health_check.sh"
+    # source      = "files/health_check.sh"
+    content     = data.template_file.health_check.rendered
     destination = "/home/${var.aws_ami_user}/health_check.sh"
   }
   
   provisioner "file" {
-    source      = "files/dep_comp.sh"
+    # source      = "files/dep_comp.sh"
+    content     = data.template_file.dep_comp.rendered
     destination = "/home/${var.aws_ami_user}/dep_comp.sh"
   }
 
